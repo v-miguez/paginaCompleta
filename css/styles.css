@@ -1,1 +1,18 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
+body{
+	display: flex;
+	flex-direction: row;
+}
+#menu{
+	flex-basis: 20%;
+	height: 825px;
+	background-color: #eee;
+	display: flex; 
+	flex-direction: column;
+	padding:100px 50px;
+
+}
+#zonaImagenes{
+	flex-basis: 80%;
+	background-color: #666666;
+}
