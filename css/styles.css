@@ -13,11 +13,13 @@ body{
 	
 }
 #zonaImagenes{
+	height: 825px;
 	display: flex;
 	justify-content: space-around;	
 	flex-wrap: wrap;
 	flex-basis: 80%;
 	background-color: #666666;
+	overflow: hidden;
 }
 .imagen{
 	width: 150px;
