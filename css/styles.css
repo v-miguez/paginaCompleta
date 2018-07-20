@@ -10,9 +10,17 @@ body{
 	display: flex; 
 	flex-direction: column;
 	padding:100px 50px;
-
+	
 }
 #zonaImagenes{
+	display: flex;
+	justify-content: space-around;	
+	flex-wrap: wrap;
 	flex-basis: 80%;
 	background-color: #666666;
+}
+.imagen{
+	width: 150px;
+	height: 150px;
+	margin: 10px;
 }
