@@ -5,7 +5,7 @@
 		json.open('GET', urlJson, true);
 		json.send();
 		json.addEventListener('readystatechange', cargarLista);
-
+		var numeroMenus =new Array();
 
 		$('html, body').load(cargarLista);
 
@@ -14,10 +14,26 @@
 	
 
 			if (this.readyState==4 && this.status == 200){
-				var lista = JSON.parse(this.responseText);
-				for(var i = 0; i<500; i++){
-				console.log(lista[i]);
-				}
 
+				var lista = JSON.parse(this.responseText);
+				for(var i = 1; i<1000; i=i+50){
+
+					numeroMenus.push(lista[i]['albumId']);
+					pintarMenu(numeroMenus);
+
+				}
+				console.log(numeroMenus);
+
+				pintarMenu(numeroMenus);
 			}
+		}
+
+
+		function pintarMenu(pNumeroMenus){
+			var menu="";
+			for ( var j=1; j<=pNumeroMenus.length; j++ ){
+
+				menu +='<li>menu'+j+'</li>';
+			}
+			$('#listado').html(menu);
 		}
