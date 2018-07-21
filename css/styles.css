@@ -18,8 +18,36 @@ body{
 	justify-content: space-around;	
 	flex-wrap: wrap;
 	flex-basis: 80%;
-	background-color: #666666;
 	overflow: hidden;
+}
+#lightbox{
+	width: 88%;
+	height: 825px;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	}
+
+#botonCerrar{
+	width: 30px;
+	height: 30px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	padding: 4px;
+	background-color: black;
+	position: absolute;
+	top: 15%;
+	left: 70%;
+	border-radius: 50%;
+	text-align: center;
+}
+#imagenLight{
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	background-color: white;
 }
 .imagen{
 	width: 150px;

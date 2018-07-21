@@ -101,9 +101,13 @@
 
 	//funcion para crear el lightbox
 		function mostrarLightBox(){
-			alert('holi');		
+		$('#zonaImagenes').append('<div id="lightbox"><div id="imagenLight"></div><div id="botonCerrar">X</div></div>', container);
+			pintarLightBox();
 		}
 
+		function pintarLightBox(){
+			$('#imagenLight').html('<img src="http://placehold.it/150/f66b97" class="imagen" >')
+		}
 
 
 
