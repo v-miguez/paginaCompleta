@@ -13,8 +13,7 @@
 
 
 	$( document ).on( "DOMNodeInserted", function( e ) {
-	console.log( e.target );
-	$(e.target).on('click', mostrarLightBox())  // the new element	
+	$('.sliphover-overlay').on('click', mostrarLightBox)  // the new element	
 });
 		//funcion sliphover de jquery
 			$(document).ready(function(){
@@ -102,7 +101,7 @@
 
 	//funcion para crear el lightbox
 		function mostrarLightBox(){
-			console.log('holi');		
+			alert('holi');		
 		}
 
 
