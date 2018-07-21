@@ -10,35 +10,19 @@
 
 		json.addEventListener('readystatechange', cargarLista);
 		$('html, body').ready(cargarLista);
-// 	// $('html').bind("DOMSubtreeModified",function(){
-//  //  		console.log('changed');
-// 	// });
-// 	$( document ).on( "DOMNodeInserted", function( e ) {
-// 	$(e.target).on('click', mostrarLightBox())  // the new element	
-// });
 
-	// select the target node
-var target = document.getElementsByTagName('body')[0];
- 
-// create an observer instance
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    console.log(mutation.type);
-  });    
+
+	$( document ).on( "DOMNodeInserted", function( e ) {
+	console.log( e.target );
+	$(e.target).on('click', mostrarLightBox())  // the new element	
 });
- 
-// configuration of the observer:
-var config = { attributes: true, childList: true, characterData: true };
-
 		//funcion sliphover de jquery
 			$(document).ready(function(){
 
 			$('#container').sliphover();
 
 			})
-// pass in the target node, as well as the observer options
-observer.observe(target, config);
- 
+
 
 
 		//creacion de Arrays
