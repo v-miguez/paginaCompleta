@@ -30,6 +30,7 @@
 		var listaAlbum=new Array();
 		var listaIds=new Array();
 		var listaTitulos=new Array();
+		var listaUrl=new Array();
 
 
 
@@ -55,6 +56,7 @@
 					listaAlbum.push(lista[j]['albumId']);
 					listaIds.push(lista[j]['id']);
 					listaTitulos.push(lista[j]['title']);
+					listaUrl.push(lista[j]['url']);
 
 				}
 				pintarMenu(numeroMenus);
@@ -102,13 +104,19 @@
 	//funcion para crear el lightbox
 		function mostrarLightBox(){
 		$('#zonaImagenes').append('<div id="lightbox"><div id="imagenLight"></div><div id="botonCerrar">X</div></div>', container);
+		$('#botonCerrar').on('click', cerrarLightBox);
 			pintarLightBox();
 		}
 
 		function pintarLightBox(){
+			console.log(listaUrl, listaIds);
 			$('#imagenLight').html('<img src="http://placehold.it/150/f66b97" class="imagen" >')
 		}
 
+		function cerrarLightBox(){
+			$('#lightbox').remove();
+
+		}
 
 
 
