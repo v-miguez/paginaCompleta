@@ -9,9 +9,17 @@
 		var listaImagenes= new Array();
 		var listaAlbum=new Array();
 		var listaIds=new Array();
+		var listaTitulos=new Array();
 
 		$('html, body').ready(cargarLista);
 
+
+		//funcion sliphover de jquery
+		$(document).ready(function(){
+
+		$('#container').sliphover();
+
+		})
 
 
 
@@ -31,10 +39,11 @@
 					listaImagenes.push(lista[j]['thumbnailUrl']);
 					listaAlbum.push(lista[j]['albumId']);
 					listaIds.push(lista[j]['id']);
+					listaTitulos.push(lista[j]['title']);
 
 				}
 				pintarMenu(numeroMenus);
-				pintarFoto(listaImagenes, listaAlbum, listaIds);
+				pintarFoto(listaImagenes, listaAlbum, listaIds, listaTitulos);
 			}
 		}
 
@@ -54,12 +63,14 @@
 
 
 
-		function pintarFoto(pListaImagenes, pListaTipo, pListaId){
+		function pintarFoto(pListaImagenes, pListaTipo, pListaId, pListaTitulos){
 			var imagenes= "";
 			for(var k=0; k<pListaImagenes.length; k++){
-				imagenes +='<img src="'+pListaImagenes[k]+'" class="imagen" data-album="'+pListaTipo[k]+'" id="'+pListaId[k]+'"></img>'
+				imagenes +='<img src="'+pListaImagenes[k]+'" class="imagen" title="'+pListaTitulos[k]+'" data-album="'+pListaTipo[k]+'" id="'+pListaId[k]+'"></img>'
 			}
-				$('#zonaImagenes').html(imagenes);
+				$('#container').html(imagenes);
+
+			$('.imagen').on('hover', )
 
 		}
 
@@ -71,4 +82,9 @@
 			$('*[data-album="'+this.id+'"]').css('display', 'flex');
 
 		}
+
+
+
+		$('#container').slipHover();
+
 
