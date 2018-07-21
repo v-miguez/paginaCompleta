@@ -1,29 +1,41 @@
-
+		//abriendo el JSON para poder leerlo a continuacion
 		var urlJson="https://jsonplaceholder.typicode.com/photos";
 		var json= new XMLHttpRequest();
 
 		json.open('GET', urlJson, true);
 		json.send();
+
+
+		//añadiendo eventos
+
 		json.addEventListener('readystatechange', cargarLista);
+		$('html, body').ready(cargarLista);
+	$('.sliphover-container').bind("DOMSubtreeModified",function(){
+  		console.log('changed');
+	});
+		//funcion sliphover de jquery
+			$(document).ready(function(){
+
+			$('#container').sliphover();
+			})
+
+
+
+		//creacion de Arrays
 		var numeroMenus =new Array();
 		var listaImagenes= new Array();
 		var listaAlbum=new Array();
 		var listaIds=new Array();
 		var listaTitulos=new Array();
 
-		$('html, body').ready(cargarLista);
 
 
-		//funcion sliphover de jquery
-		$(document).ready(function(){
-
-		$('#container').sliphover();
-
-		})
+		
+		
 
 
-
-//Cargamos los datos del listado y los pintamos
+//Seccion de funciones
+	//Cargamos los datos del listado y los pintamos
 		function cargarLista(event){
 	
 
@@ -47,7 +59,7 @@
 			}
 		}
 
-//funcion para pintar el numero de menus correctos
+	//funciones para pintar el numero de menus correctos y las imagenes
 		function pintarMenu(pNumeroMenus){
 			var menu="";
 			for ( var j=1; j<=pNumeroMenus.length; j++ ){
@@ -70,21 +82,26 @@
 			}
 				$('#container').html(imagenes);
 
-			$('.imagen').on('hover', )
+			//Despues de pintar las imagenes les añadimos un evento para mostrar el lightbox
+				$('.sliphover-container').on('click', mostrarLightBox);
 
 		}
 
 
 
-
+	//funcion para filtrar las fotos al hacer click
 		function filtrarFoto(event){
 			$('.imagen').css('display', 'none');
 			$('*[data-album="'+this.id+'"]').css('display', 'flex');
 
 		}
 
+	//funcion para crear el lightbox
+		function mostrarLightBox(){
+			alert('holi');		
+		}
 
 
-		$('#container').slipHover();
+
 
 
